@@ -82,7 +82,7 @@ Error message
 Error message
 
     TSError: ⨯ Unable to compile TypeScript:
-    src/database.ts:1:22 - error TS7016: Could not find a declaration file for module 'pg'. '/Users/dave/src.sandbox/entitydb/node_modules/pg/lib/index.js' implicitly has an 'any' type.
+    src/database-common.ts:1:22 - error TS7016: Could not find a declaration file for module 'pg'. '/Users/dave/src.sandbox/entitydb/node_modules/pg/lib/index.js' implicitly has an 'any' type.
     Try `npm i --save-dev @types/pg` if it exists or add a new declaration (.d.ts) file containing `declare module 'pg';`
 
     1 import { Pool } from 'pg';

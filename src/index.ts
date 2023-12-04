@@ -1,20 +1,20 @@
-import { importFacebookData } from './importers/facebookImporter';
-import { importInstagramData } from './importers/instagramImporter';
-import { importTwitterData } from './importers/twitterImporter';
+import { importFacebookPostData } from './importers/facebookPostImporter';
+import { importInstagramPostData } from './importers/instagramPostImporter';
+import { importTweetData } from './importers/tweetImporter';
 
 const dataSource = process.argv[2];
 
 switch (dataSource) {
-    case 'facebook':
-        importFacebookData();
+    case 'facebookPosts':
+        importFacebookPostData();
         break;
-    case 'instagram':
-        importInstagramData();
+    case 'instagramPosts':
+        importInstagramPostData();
         break;
-    case 'twitter':
-        importTwitterData();
+    case 'tweets':
+        importTweetData();
         break;
     default:
-        console.log('Invalid data source specified. Use facebook, instagram, or twitter.');
+        console.log('Invalid data source specified. Use facebookPosts, instagramPosts, or tweets.');
 }
 

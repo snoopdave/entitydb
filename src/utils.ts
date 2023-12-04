@@ -7,3 +7,11 @@ export function hashData(data: string): string {
 export function convertTimestamp(timestamp: number): Date {
   return new Date(timestamp);
 }
+
+export function fixEncoding(str: string): string {
+  // Convert the string to a buffer using the original encoding (likely Windows-1252 or ISO-8859-1)
+  const buffer = Buffer.from(str, 'binary');
+
+  // Convert the buffer to a UTF-8 string
+  return buffer.toString('utf8');
+}

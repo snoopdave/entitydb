@@ -1,0 +1,29 @@
+
+scalar DateTime
+
+enum EntityType {
+    FACEBOOKPOST,
+    INSTAGRAMPOST,
+    TWEET
+}
+
+input EntitySearchInput {
+    types: [EntityType]
+    startDate: DateTime
+    endDate: DateTime
+    searchText: String
+    offset: Int
+    limit: Int
+}
+
+type Entity {
+    id: ID!
+    type: EntityType!
+    fullText: String
+    link: String
+    entityTimestamp: DateTime
+}
+
+type Query {
+    searchEntities(input: EntitySearchInput): [Entity]
+}

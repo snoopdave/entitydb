@@ -12,7 +12,7 @@ export async function createTableIfNotExists(tableName: string): Promise<void> {
     const query = `
     CREATE TABLE IF NOT EXISTS ${tableName} (
       id VARCHAR(255) PRIMARY KEY,
-      timestamp TIMESTAMP,
+      entity_timestamp TIMESTAMP,
       value JSON
     );
   `;

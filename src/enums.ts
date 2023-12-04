@@ -1,5 +1,5 @@
 export enum DataType {
-    Facebook = 'Facebook',
-    Instagram = 'Instagram',
-    Twitter = 'Twitter',
+    FacebookPost = 'FacebookPost',
+    InstagramPost = 'InstagramPost',
+    Tweet = 'Tweet',
 }
