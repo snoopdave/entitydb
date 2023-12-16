@@ -56,3 +56,7 @@ In another terminal window:
 
 Once it is up running you can connect to it at http://localhost:8080
 
+## Screenshot 
+
+![](screenshot1.png)
+
