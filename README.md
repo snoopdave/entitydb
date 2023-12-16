@@ -1,36 +1,58 @@
 
 # EntityDB
 
-This project illustrates a way to import different types of data into Postgres and then query across those data types using Postgres' JSON capabilities.
+This is a project I'm working on to better understand how to use generative AI to learn new technologies write code in response to detailed prompts.
 
-The project allows you to import your Twitter, Facebook and Instagram tweet text into separate tables of a database and then query across those types.
+The initial goal of the project was to import data from social networks Facebook, Instagram and Twitter into a database and then provide a unified view of the posts, tweets or images that you can page through and search.
 
-For example, this query would display all tweets, Facebook and Instagram tweets:
+I developed the project via a set of prompts you you can find in the [prompts](./prompts) directory.
+Almost all of the code was written by ChatGPT-4.
 
-    SELECT id, type, full_text from (
-        SELECT 
-            id, 
-            timestamp, 
-            (value -> 'data' -> 0 -> 'post')::varchar AS full_text, 
-            'facebook' AS type
-        FROM facebooks
-    UNION ALL
-    SELECT 
-            id, 
-            timestamp, 
-            (value -> 'media' -> 0 -> 'title')::varchar AS full_text, 
-            'instagram' AS type
-        FROM instagrams
-    UNION ALL
-    SELECT 
-            id, 
-            timestamp, 
-            (value -> 'tweet' ->> 'full_text')::varchar AS full_text, 
-            'twitter' AS type
-        FROM twitters
-    ORDER BY timestamp DESC
-    );
+## Overview
 
-This project was generated almost entirely via ChatGPT 4 with the prompt in PROMPT.md.
+This project is made up of a number of components:
 
+* Importers to import social media data into PostgreSQL tables
+  * Facebook importer
+  * Twitter importer
+  * Instgram importer
+* GraphQL server that provides API access to the data
+* Web server that serves images from the social media data
+* Web UI that allows you to page and search through the data
+
+The rest of this doc gives an overview setting up and running this code.
+
+## Download and unzip your social media data
+
+Download your user data from Twitter, Facebook and Twitter and unzip each of the resulting files into the directory `web-static/data`.
+Do this by first creating three directories `instagram`, `facebook` and `twitter` unzipping into each.
+
+## Import your data
+
+Follow the instructions in the [IMPORTING_DATA.md](IMPORTING_DATA.md) doc.
+
+## Start the GraphQL server
+
+In one terminal window:
+
+    npm run generate
+    npm run server
+
+Once it is up running you can connect to it at http://localhost:4000, e.g. via Apollo Studio or your favorite GraphQL client.
+
+## Start the static web server (for images)
+
+In another terminal window:
+
+    cd web-static
+    npm run build
+    npm run start
+
+# Start the Web UI
+
+    cd web-ui
+    npm build:dev
+    npm start:dev
+
+Once it is up running you can connect to it at http://localhost:8080
 
