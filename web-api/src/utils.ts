@@ -1,4 +1,5 @@
 import * as crypto from 'crypto';
+import * as jschardet from 'jschardet';
 
 export function hashData(data: string): string {
   return crypto.createHash('sha256').update(data).digest('hex');
@@ -6,6 +7,11 @@ export function hashData(data: string): string {
 
 export function convertTimestamp(timestamp: number): Date {
   return new Date(timestamp);
+}
+
+export function unescapeJsonString(escapedJsonString: string): string {
+  // Parse the JSON string, then stringify it to get the unescaped string
+  return JSON.stringify(JSON.parse(`"${escapedJsonString}"`));
 }
 
 export function fixEncoding(str: string): string {

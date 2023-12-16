@@ -1,7 +1,6 @@
-import { pool } from '../database-common';
+import {pool} from '../database-common';
 import {Entity, EntitySearchInput, EntityType} from "../__generated__/resolvers-types";
-import {link} from "fs";
-import {fixEncoding} from "../utils";
+import {fixEncoding, unescapeJsonString} from "../utils";
 
 const buildSQLQuery = (input: EntitySearchInput) => {
     const conditions: string[] = [];

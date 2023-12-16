@@ -24,6 +24,7 @@
     "apollo-server": "^3.13.0",
     "crypto": "^1.0.1",
     "fs": "^0.0.1-security",
+    "jschardet": "^3.0.0",
     "nodemon": "^3.0.1",
     "pg": "^8.11.3"
   }
