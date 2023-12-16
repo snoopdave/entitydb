@@ -1,1 +1,5 @@
 /data/
+/web-ui/dist/
+/src/__generated__/
+/web-static/data/
+/web-static/dist/

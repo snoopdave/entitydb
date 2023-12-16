@@ -3,7 +3,6 @@ import './search-controls';
 import './pagination-controls';
 import './entities-list';
 import { fetchEntities, Entity } from './graphql-client';
-import styles from './styles.css'
 
 @customElement('entity-db-app')
 class EntityDbApp extends LitElement {

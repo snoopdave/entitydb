@@ -1,15 +1,18 @@
 
 # Prompt: design and implement a GraphQL API for EntityDB
 
-Now, I would like to create a simple GraphQL API that will allow me to query for entities across all of my types. The GraphQL schema should include an enum of the types and there should be a query function that allows a caller to specify which types are to be included in the query and it defaults to all types, you can also specify search text that.
+Now, I would like to create a simple GraphQL API that will allow me to query for entities across all of my types. 
+The GraphQL schema should include an enum of the types and there should be a query function that allows a caller to specify which types are to be included in the query and it defaults to all types, you can also specify search text that.
 
-The GraphQL API should be well suited for displaying Entities on a Calendar that has Year, Month, Day and Blog views. The query should take one argument, the EntitySeachInput type and it should have fields that allow searching by types, date ranges suitable for a calendar front-end and text.
+The GraphQL API should be well suited for displaying Entities on a Calendar that has Year, Month, Day and Blog views. 
+The query should take one argument, the EntitySeachInput type and it should have fields that allow searching by types, date ranges suitable for a calendar front-end and text.
 
 I want you first to design the GraphQL schema and print it out.
 
 Next create an implementation in Typescript like the rest of the code for this project. The implementation should use the latest version of the Apollo server. 
 
-To design the implementation start with the SQL below which allows us to query for id, type, full_text and link across our four data types, I want you to modify create a new query that uses the same technique to allow me to do a 'like' text search in the full_text or link fields. The GraphQL implementation will call a query like this, but it will have to be parameterized so that the caller can specify which types are to be included and the text to be searched.
+To design the implementation start with the SQL below which allows us to query for id, type, full_text and link across our four data types, I want you to modify create a new query that uses the same technique to allow me to do a 'like' text search in the full_text or link fields. 
+The GraphQL implementation will call a query like this, but it will have to be parameterized so that the caller can specify which types are to be included and the text to be searched.
 
     SELECT id, type, full_text, link from (
         SELECT

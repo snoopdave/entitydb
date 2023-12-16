@@ -10,19 +10,20 @@
     "start:dev": "webpack serve --open --mode development"
   },
   "dependencies": {
-    "lit-element": "^2.5.1",
-    "graphql-request": "^3.4.0"
+    "graphql-request": "^3.4.0",
+    "lit-element": "^2.5.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^5.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.17",
     "typescript": "^4.2.4",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
-    "ts-loader": "^8.0.17",
-    "html-webpack-plugin": "^5.3.1",
-    "css-loader": "^5.2.0",
-    "style-loader": "^2.0.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "author": "",
   "license": "ISC"

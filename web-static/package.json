@@ -1,0 +1,25 @@
+{
+  "name": "typescript-node-server",
+  "version": "1.0.0",
+  "description": "A simple TypeScript and Node.js server to serve .jpg files",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js && node dist/index.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mime-types": "^2.1.27"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^14.14.37",
+    "i": "^0.3.7",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.4",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
