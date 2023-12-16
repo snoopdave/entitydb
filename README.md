@@ -10,22 +10,23 @@ Almost all of the code was written by ChatGPT-4.
 
 ## Overview
 
-This project is made up of a number of components:
+This project is written in Typescript and is made up of a number of components:
 
-* Importers to import social media data into PostgreSQL tables
-  * Facebook importer
-  * Twitter importer
-  * Instgram importer
-* GraphQL server that provides API access to the data
-* Web server that serves images from the social media data
-* Web UI that allows you to page and search through the data
+* Importers to import social media data into PostgreSQL tables:
+  * Facebook importer.
+  * Twitter importer.
+  * Instagram importer.
+* `./src` - GraphQL server that provides API access to the data (uses Apollo Server).
+* `./web-static` - Web server that serves images from the social media data (Express and Webpack).
+* `./web-ui` - Web UI that allows you to page and search through the data (Web components & Lit framework).
 
 The rest of this doc gives an overview setting up and running this code.
 
 ## Download and unzip your social media data
 
-Download your user data from Twitter, Facebook and Twitter and unzip each of the resulting files into the directory `web-static/data`.
-Do this by first creating three directories `instagram`, `facebook` and `twitter` unzipping into each.
+Download your user data from Twitter, Facebook and Twitter.
+Then create three directories under `web-static/data` named `instagram`, `facebook` and `twitter`.
+Unzip the Facebook data into `facebook`, Twitter into `twitter` and Instagram into `instagram`.
 
 ## Import your data
 
