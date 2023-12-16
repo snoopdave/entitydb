@@ -8,12 +8,14 @@ The initial goal of the project was to import data from social networks Facebook
 I developed the project via a set of prompts you you can find in the [prompts](./prompts) directory.
 Almost all of the code was written by ChatGPT-4.
 
+![](./entitydb-dalle.png)
+
 ## Overview
 
 This project is written in Typescript and is made up of a number of components:
 
 * Importers to import social media data into PostgreSQL tables:
-  * Facebook importer.
+  * Facebook importer.git 
   * Twitter importer.
   * Instagram importer.
 * `./web-api` - GraphQL server that provides API access to the data (uses Apollo Server).
