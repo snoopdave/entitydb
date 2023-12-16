@@ -16,9 +16,9 @@ This project is written in Typescript and is made up of a number of components:
   * Facebook importer.
   * Twitter importer.
   * Instagram importer.
-* `./src` - GraphQL server that provides API access to the data (uses Apollo Server).
-* `./web-static` - Web server that serves images from the social media data (Express and Webpack).
+* `./web-api` - GraphQL server that provides API access to the data (uses Apollo Server).
 * `./web-ui` - Web UI that allows you to page and search through the data (Web components & Lit framework).
+* `./web-static` - Web server that serves images from the social media data (Express and Webpack).
 
 The rest of this doc gives an overview setting up and running this code.
 
@@ -36,6 +36,7 @@ Follow the instructions in the [IMPORTING_DATA.md](IMPORTING_DATA.md) doc.
 
 In one terminal window:
 
+    cd web-api
     npm run generate
     npm run server
 
