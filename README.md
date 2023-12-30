@@ -1,12 +1,11 @@
 
 # EntityDB
 
-This is a project I'm working on to better understand how to use generative AI to learn new technologies and have it write code in response to detailed prompts.
+This is a project I'm working on to better understand how to use generative AI to learn new technologies and have it write a body of code in response to detailed prompts.
 
-The initial goal of the project was to import data from social networks Facebook, Instagram and Twitter into a database and then provide a unified view of the posts, tweets or images that you can page through and search.
+The initial goal of the project was to import data from social networks Facebook, Instagram, Twitter and maybe even Quicken into a database and then provide a unified view of the posts, tweets or images (or transactions) that you can page through and search.
 
-I developed the project via a set of prompts you you can find in the [prompts](./prompts) directory.
-Almost all of the code was written by ChatGPT-4.
+I developed the project via ChatGPT-4 and a set of prompts you you can find in the [prompts](./prompts) directory. More than 95% of the code was written by ChatGPT-4.
 
 ![](./entitydb-dalle.png)
 
