@@ -23,7 +23,7 @@ This command installs all the packages required for the project, as defined in t
 
 ## Step 3: Configure Database Connection
 
-Modify the src/database.ts file to include your PostgreSQL connection details. Replace your_username, your_password, and your_database with your actual PostgreSQL credentials.
+Modify the `src/database-common.ts` file to include your PostgreSQL connection details. Replace your_username, your_password, and your_database with your actual PostgreSQL credentials.
 
     export const pool = new Pool({
         user: 'your_username',
@@ -49,7 +49,7 @@ Replace the paths with the actual locations of your downloaded data files, which
 
 Compile the TypeScript code to JavaScript by running the following command:
 
-    npm run build
+    npm run generate
 
 This command generates JavaScript files from your TypeScript source files in the dist directory.
 

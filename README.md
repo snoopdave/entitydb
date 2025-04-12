@@ -59,8 +59,8 @@ In another terminal window:
 ### Start the Web UI
 
     cd web-ui
-    npm build:dev
-    npm start:dev
+    npm run build:dev
+    npm run start:dev
 
 Once it is up running you can connect to it at http://localhost:8080
 

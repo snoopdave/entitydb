@@ -60,7 +60,7 @@ const buildSQLQuery = (input: EntitySearchInput) => {
 
     const finalQuery = `
         SELECT id, entity_timestamp, type, full_text, link 
-        FROM (${conditions.join(' ')}) ${whereClause} 
+        FROM (${conditions.join(' ')}) AS combined_data ${whereClause} 
         ORDER BY entity_timestamp DESC${limit}${offset}`;
 
     return { finalQuery, params };
@@ -73,7 +73,7 @@ export const searchEntities = async (input: EntitySearchInput): Promise<Entity[]
     return result.rows.map(row => ({
         id: row.id,
         type: mapTypeToEnum(row.type),
-        fullText: fixEncoding(row.full_text),
+        fullText: row.full_text ? fixEncoding(row.full_text) : null,
         link: row.link,
         entityTimestamp: row.entity_timestamp
     }));

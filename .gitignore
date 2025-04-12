@@ -5,3 +5,4 @@
 /web-static/dist/
 /web-static/dist/
 /web-api/src/__generated__/
+/assistant/.env
