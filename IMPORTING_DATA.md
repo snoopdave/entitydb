@@ -14,15 +14,16 @@ First, ensure you have the EntityDB Importer project set up on your machine. If 
 
 ## Step 2: Install Dependencies
 
-Navigate to your project directory in the terminal and run the following command to install the necessary Node.js dependencies:
+Navigate to your project directory `web-api` in the terminal and run the following command to install the necessary Node.js dependencies:
 
+    cd web-api
     npm install
 
 This command installs all the packages required for the project, as defined in the package.json file.
 
 ## Step 3: Configure Database Connection
 
-Modify the src/database.ts file to include your PostgreSQL connection details. Replace your_username, your_password, and your_database with your actual PostgreSQL credentials.
+Modify the `src/database-common.ts` file to include your PostgreSQL connection details. Replace your_username, your_password, and your_database with your actual PostgreSQL credentials.
 
     export const pool = new Pool({
         user: 'your_username',
@@ -42,13 +43,13 @@ Update the src/config.ts file with the paths to your downloaded data files for T
         twitter: 'path/to/twitter-data.js',
     };
 
-Replace the paths with the actual locations of your downloaded data files.
+Replace the paths with the actual locations of your downloaded data files, which should be under `./web-static/data`.
 
 ## Step 5: Compile the TypeScript Code
 
 Compile the TypeScript code to JavaScript by running the following command:
 
-    npm run build
+    npm run generate
 
 This command generates JavaScript files from your TypeScript source files in the dist directory.
 

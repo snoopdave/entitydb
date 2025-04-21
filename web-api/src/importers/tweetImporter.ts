@@ -17,8 +17,12 @@ export async function importTweetData() {
     await createTableIfNotExists(tableName);
 
     for (const tweet of tweets) {
-        const id = tweet.id;
-        const entity_timestamp = new Date(tweet.tweet.created_at); // Directly converting ISO 8601 string to Date.
+        const id = tweet.tweet.id_str || tweet.tweet.id;
+        if (!id) {
+            console.warn('Skipping tweet without ID');
+            continue;
+        }
+        const entity_timestamp = new Date(tweet.tweet.created_at);
         const query = `INSERT INTO ${tableName} (id, entity_timestamp, value) VALUES ($1, $2, $3) ON CONFLICT (id) DO NOTHING;`;
         await pool.query(query, [id, entity_timestamp, tweet]);
     }

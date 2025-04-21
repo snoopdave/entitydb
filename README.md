@@ -17,23 +17,27 @@ This project is written in Typescript and is made up of a number of components:
   * Facebook importer.git 
   * Twitter importer.
   * Instagram importer.
-* `./web-api` - GraphQL server that provides API access to the data (uses Apollo Server).
+* `./web-api` - GraphQL server that provides [API](https://github.com/snoopdave/entitydb/blob/master/web-api/src/graphql/schema.graphql) access to the data (uses Apollo Server).
 * `./web-ui` - Web UI that allows you to page and search through the data (Web components & Lit framework).
-* `./web-static` - Web server that serves images from the social media data (Express and Webpack).
+* `./web-static` - [Web server](https://github.com/snoopdave/entitydb/blob/master/web-static/README.md) that serves images from the social media data (Express and Webpack).
 
 The rest of this doc gives an overview setting up and running this code.
 
-## Download and unzip your social media data
+## So you want to try EntityDB...
+
+Here are the steps.
+
+### Download and unzip your social media data
 
 Download your user data from Twitter, Facebook and Twitter.
 Then create three directories under `web-static/data` named `instagram`, `facebook` and `twitter`.
 Unzip the Facebook data into `facebook`, Twitter into `twitter` and Instagram into `instagram`.
 
-## Import your data
+### Import your data
 
 Follow the instructions in the [IMPORTING_DATA.md](IMPORTING_DATA.md) doc.
 
-## Start the GraphQL server
+### Start the GraphQL server
 
 In one terminal window:
 
@@ -43,7 +47,7 @@ In one terminal window:
 
 Once it is up running you can connect to it at http://localhost:4000, e.g. via Apollo Studio or your favorite GraphQL client.
 
-## Start the static web server (for images)
+### Start the static web server (for images)
 
 In another terminal window:
 
@@ -51,15 +55,17 @@ In another terminal window:
     npm run build
     npm run start
 
-# Start the Web UI
+### Start the Web UI
 
     cd web-ui
-    npm build:dev
-    npm start:dev
+    npm run build:dev
+    npm run start:dev
 
 Once it is up running you can connect to it at http://localhost:8080
 
 ## Screenshot 
+
+Here's what the Web UI looks like:
 
 ![](screenshot1.png)
 

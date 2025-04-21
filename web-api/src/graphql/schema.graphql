@@ -8,6 +8,7 @@ enum EntityType {
 }
 
 input EntitySearchInput {
+    id: ID
     types: [EntityType]
     startDate: DateTime
     endDate: DateTime
